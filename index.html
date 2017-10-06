@@ -3,11 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>NotePET Q</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 	<script src="js/jquery-1.12.4.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
 <body>
 	<nav class="navbar navbar-expand-md navbar-collapse-xs navbar-light bg-light">
@@ -15,9 +18,11 @@
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
-			  <a class="navbar-brand" href="#">Notepet</a>
+			  <a class="navbar-brand" href="#">
+			  	<img src="img/notepet.svg" class="svg">
+			  </a>
 			  <div class="collapse navbar-collapse" id="navbarNav">
-			    <ul class="navbar-nav">
+			    <ul class="navbar-nav ml-auto">
 			      <li class="nav-item active">
 			        <a class="nav-link" href="#">Home</a>
 			      </li>
@@ -42,14 +47,74 @@
 	</section>
 	<div class="row justify-content-center">
 		<div class="col-md-9 panel">
+			<form action="search">
+			<span>Jenis Peliharaan</span>
 			<div class="row">
-				<div class="col-md-4">
-					<span class="title">Services</span>
+				<div class="col-md-3">
+					<input type="radio" name="jenis" id="anjing" value="anjing">
+					<label class="menus" for="anjing">
+						<img src="img/dog.svg" class="svg">
+						Anjing	
+					</label>
 				</div>
-				<div class="col-md-8">
-					<span class="title">Option</span>
+				<div class="col-md-3">
+					<input type="radio" name="jenis" id="Kucing" value="Kucing">
+					<label class="menus" for="Kucing">
+						<img src="img/cat.svg" class="svg">
+						Kucing	
+					</label>
+				</div>
+				<div class="col-md-3">
+					<input type="radio" name="jenis" id="Ikan" value="Ikan">
+					<label class="menus" for="Ikan">
+						<img src="img/fish.svg" class="svg">
+						Ikan	
+					</label>
+				</div>
+				<div class="col-md-3">
+					<input type="radio" name="jenis" id="Burung" value="Burung">
+					<label class="menus" for="Burung">
+						<img src="img/bird.svg" class="svg">
+						Burung	
+					</label>
 				</div>
 			</div>
+			<span width="100%">Layanan</span>
+			<div class="row">
+				<div class="col-md-3">
+					<input type="radio" name="service" id="TA" value="TakeAway">
+					<label class="menus services" for="TA">
+						<img src="img/cage.svg" class="svg">
+						Take Away	
+					</label>
+				</div>
+				<div class="col-md-3">
+					<input type="radio" name="service" id="HC" value="HomeComing">
+					<label class="menus services" for="HC">
+						<img src="img/kennel.svg" class="svg">
+						Home Coming	
+					</label>
+				</div>
+				<div class="col-md-6 inputan">
+					<div class="row">
+						<div class="col-md-12">
+							<input type="text" placeholder="Alamat" class="form-control" name="">
+						</div>	
+						<div class="col-md-12">
+							<div class="row t1">
+								<div class="col-md-6">
+									<input type="text" class="form-control" placeholder="Tanggal Datang" class="dates">
+								</div>
+								<div class="col-md-6">
+									<input type="text" class="form-control" placeholder="Diambil">
+								</div>
+							</div>
+						</div>	
+						<div class="col-md-12"><button class="btn btn-warning btn-block" id="searchbutton">Cari Sitter</button></div>	
+					</div>
+				</div>
+			</div>
+			</form>
 		</div>
 	</div>
 	<section class="services">
@@ -76,7 +141,7 @@
 								</div>
 								<span>Home Coming</span>
 								<p>
-									Penitipan Hewan dalam waktu kurang dari satu hari
+									Penitipan Hewan dalam waktu satu hari atau lebih
 								</p>
 							</div>
 						</div>		
@@ -131,5 +196,12 @@
 			</div>
 	</section>
 
+	<footer>
+		<div class="col-12 footer"></div>
+		<div class="col-12 copyright">
+			<div class="container">Dibuat dengan<img src="img/like.svg" height="15px">Oleh TIM SAVAGE LAB PEMRO ILKOM</div>
+		</div>
+	</footer>
+	<script src="js/style.js"></script>
 </body>
 </html>

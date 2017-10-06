@@ -2,6 +2,22 @@
 *{
 font-family: 'Lato', sans-serif;
 }
+
+.navbar-brand{
+	overflow: hidden;
+	width: 200px;
+	padding: 0px 0px 0px 15px;
+	height: 40px;
+}
+
+.navbar-brand svg{
+	max-height: 35px;
+}
+
+.navbar-brand svg path{
+	fill:#ffc400;
+}
+
 .banner{
 	height: 400px;
 	background: #fafafa;
@@ -19,13 +35,94 @@ font-family: 'Lato', sans-serif;
 }
 .panel{
 	position: absolute;
-	background: rgba(255,255,255,0.98);
+	background: rgba(255,255,255,0.987);
 	border-radius: 5px;
-	height: 225px;
-	margin-top: -80px;
-	padding: 25px;
+	/*min-height: 200px;*/
+	margin-top: -150px;
+	padding: 10px 25px;
 	box-shadow: .5px .5px .5px #dddddd;
 }
+
+.panel .col-md-3,.panel .col-md-6{
+	padding: 7.5px 7.5px;
+}
+
+.panel .col-md-12{
+	padding: 0px 10px;
+}
+
+div.col-md-6.inputan {
+	padding: 7.5px 5px 7.5px 5px;
+}
+.panel .row{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+
+.panel .menus{
+	border:1px solid #ddd;
+	/*min-height: 100px;*/
+	border-radius: 5px;
+	transition: .5s ease;
+	width: 100%;
+	display: block;
+	text-align: center;
+	padding: 20px;
+}
+
+.panel .menus svg{
+	min-height: 30px;
+	max-height: 50px;
+	transition: 0.3s;
+}
+.panel .menus svg path{
+	transition: 0.3s;
+	fill:#666;
+}
+
+.panel .menus:hover svg path{
+	fill:#ffc400;
+}
+
+.panel .menus:hover ,.panel .menus:focus{
+	border:1px solid #ffc400;
+	cursor:pointer;
+}
+
+input[type='radio']{
+	display: none;
+}
+
+input[type='radio']:checked + label.menus{
+	border:1px solid #ffc400;
+}
+
+input[type='radio']:checked + label.menus.services{
+	background: #ffc400;
+}
+
+input[type='radio']:checked + label.menus svg path{
+	fill:#ffc400;
+}
+.panel .form-control{
+	min-height: 20px;
+	padding: 6px 10px 6px 10px;
+	font-size: 16px;
+}
+.panel .form-control:focus{
+	border:1px solid #ffc400;
+}
+/*
+.panel .row .t1{
+	display: none;
+}
+.panel .row .t2{
+	display: none;
+}*/
 
 .banner h1{
 	width: 100%;
@@ -41,7 +138,7 @@ section:not(.banner){
 
 .services{
 	height: auto;
-	padding-top: 200px;
+	padding-top: 350px;
 }
 
 section h3.title{
@@ -68,10 +165,12 @@ section h3.title{
 	text-align: center;
 	transition: .2s ease;
 	margin-bottom: 20px;
+	overflow: hidden;
 }
 
 .boxservice:hover{
 	border-top: 5px solid #ffc400;
+	/*background: #ffc400;*/
 	cursor: pointer;
 	padding-top: 30px;
 }
@@ -90,7 +189,7 @@ section h3.title{
 .boxservice .img img{
 	width: 100px;
 	height: 100px;
-	transition: 0.1s ease;
+	transition: 0.2s ease;
 }
 
 .boxservice p{
@@ -103,12 +202,9 @@ section h3.title{
 	height: 105px;
 }
 
-.procedure{
-	padding-top: 50px;
-}
-
 .procedure {
 	padding: 45px 0;
+	padding-top: 100px;
 	text-align: center;
 }
 
@@ -179,4 +275,139 @@ section h3.title{
 }
 .procedure .imgProcedure img{
 	max-width: 90px;
+}
+
+.footer{
+	min-height: 350px;
+	background: #eee;
+}
+
+.copyright{
+	padding: 10px;
+	min-height: 40px;
+	background: #dedede;
+}
+
+.copyright img{
+	margin: 0px 5px;
+}
+
+#searchbutton{
+	height: 100%;
+	cursor: pointer;
+}
+
+ul#search-list{
+	list-style: none;
+	min-height: 700px;
+	padding: 0px;
+}
+li.search-items:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+li.search-items{
+	border: 1px solid #ddd;
+	margin: 15px 0px;
+}
+
+li.search-items:first-child{
+	margin-top : 0px;
+}
+
+li.search-items:hover{
+	border: 1px solid #ffc400;
+}
+
+li.search-items div.images{
+	float: left;
+	display: block;
+	width: 150px;
+	min-width: 120px;
+	height: 150px;
+	background: #000;
+	overflow: hidden;
+}
+li.search-items div.images img{
+	max-height: 100%;
+	left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+	transition: 0.1s ease;
+}
+
+li.search-items div.images:hover img{
+	max-height: 110%;
+	max-width: 200%;
+}
+
+
+li.search-items div.content{
+	float: left;
+	display: block;
+	min-height: 150px;
+	width: calc(100% - 150px - 100px);
+	padding: 5px 25px;
+	color: #555;
+}
+li.search-items div.price{
+	float: left;
+	display: block;
+	max-height: 150px;
+	width: 100px;
+	color: #555;
+	padding: 40px 10px;
+	font-size:14px;
+	background: #eee
+}
+
+li.search-items div.price span{
+	display: block;
+	width: 100%
+}
+
+li.search-items div.price span#pricetag{
+	font-size: 24px;
+	color: #ffc400;
+	font-weight: bold;
+}
+
+li.search-items div.content h4{
+	font-weight: 700;
+	font-size: 20px;
+
+}
+
+li.search-items span.badge.badge-info{
+	padding: 3px 15px;
+	background: transparent;
+	border: 1px solid #ffc400;
+	color: #ffc400;
+}
+
+span.location{
+	font-size: 14px;
+	display: block;
+	width: 100%;
+}
+
+div#panel-filter{
+	display: block;
+	width: 100%;
+	background: #ddd;
+	min-height: 200px;
+	padding: 15px;
+}
+
+div#panel-filter label{
+	font-size: 14px;
+	color: #555;
+}
+
+section#search-content{
+	padding-top: 50px;
+	background: #fafafa;
 }
